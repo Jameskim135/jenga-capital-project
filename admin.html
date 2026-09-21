@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenga Capital | Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main class="admin-shell">
+        <section id="loginView" class="login-panel">
+            <div class="brand-mark">J</div>
+            <p class="eyebrow">JENGA CAPITAL</p>
+            <h1>Admin dashboard</h1>
+            <p class="muted">Sign in to review registered applicants and loan decisions.</p>
+            <form id="loginForm">
+                <label for="adminPassword">Admin password</label>
+                <input id="adminPassword" type="password" autocomplete="current-password" required>
+                <button class="primary-button" type="submit">Sign in</button>
+                <p id="loginMessage" class="message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="dashboardView" class="dashboard" hidden>
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">JENGA CAPITAL</p>
+                    <h1>Applications</h1>
+                </div>
+                <button id="logoutButton" class="secondary-button" type="button">Sign out</button>
+            </header>
+
+            <div id="summary" class="summary-grid"></div>
+
+            <section class="table-panel">
+                <div class="table-toolbar">
+                    <div>
+                        <h2>Registered applicants</h2>
+                        <p class="muted">Review applications and record decisions.</p>
+                    </div>
+                    <div class="toolbar-controls">
+                        <label for="statusFilter">Filter status</label>
+                        <select id="statusFilter">
+                            <option value="">All applications</option>
+                            <option value="fee_required">Awaiting fee</option>
+                            <option value="not_qualified">Not qualified</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                        <button id="refreshButton" class="secondary-button" type="button">Refresh</button>
+                    </div>
+                </div>
+                <p id="dashboardMessage" class="message" aria-live="polite"></p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Applicant</th>
+                                <th>Contact</th>
+                                <th>Loan</th>
+                                <th>Amount</th>
+                                <th>Fee</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+node_modules/
+jenga-capital.sqlite
+jenga-capital.sqlite-shm
+jenga-capital.sqlite-wal
+.env
